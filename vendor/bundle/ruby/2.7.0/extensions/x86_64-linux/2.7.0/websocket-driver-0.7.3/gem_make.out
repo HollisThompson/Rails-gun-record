@@ -1,0 +1,15 @@
+current directory: /home/hollisthompson/Documents/Capybara/testing/vendor/bundle/ruby/2.7.0/gems/websocket-driver-0.7.3/ext/websocket-driver
+/usr/bin/ruby2.7 -I /usr/lib/ruby/2.7.0 -r ./siteconf20210202-12933-p1f5p.rb extconf.rb
+creating Makefile
+
+current directory: /home/hollisthompson/Documents/Capybara/testing/vendor/bundle/ruby/2.7.0/gems/websocket-driver-0.7.3/ext/websocket-driver
+make "DESTDIR=" clean
+
+current directory: /home/hollisthompson/Documents/Capybara/testing/vendor/bundle/ruby/2.7.0/gems/websocket-driver-0.7.3/ext/websocket-driver
+make "DESTDIR="
+compiling websocket_mask.c
+linking shared-object websocket_mask.so
+
+current directory: /home/hollisthompson/Documents/Capybara/testing/vendor/bundle/ruby/2.7.0/gems/websocket-driver-0.7.3/ext/websocket-driver
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 websocket_mask.so ./.gem.20210202-12933-1i6fdtx

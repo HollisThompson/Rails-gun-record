@@ -1,0 +1,13 @@
+<h1>This is all our guns</h1>
+<table>
+    <%@guns.each do |gun|%>
+        <tr>
+            <td>the gun type is <%=gun.model%></td>
+            <td><%=destroy_gun_button(gun)%></td>
+            <td><%=edit_gun_button(gun)%></td>
+            <td><%=show_gun_button(gun)%>
+        </tr>
+    <%end%>
+</table>
+<br>
+<a href = <%=new_gun_url%>>Add Gun to Store</a>

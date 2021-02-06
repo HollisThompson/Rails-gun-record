@@ -1,0 +1,39 @@
+<h1>This is were you edit your Guns</h1>
+<form method = "post" action = "<%=gun_url(@gun)%>">
+
+<input
+name = "_method"
+value = "put"
+type = "hidden">
+
+<label for = "year">Year it was made</label>
+<input
+type = "number"
+value = "<%=@gun.year%>"
+id = "gun_year"
+name = "gun[year]">
+
+<label for = "model">Type of gun</label>
+<input
+type = "text"
+value = "<%=@gun.model%>"
+id = "gun_model"
+name = "gun[model]">
+
+<label for = "condition">How good is it</label>
+<input
+type = "text"
+value = "<%=@gun.condition%>"
+id = "gun_condition"
+name = "gun[condition]">
+
+<input
+type = "hidden"
+value = "<%=form_authenticity_token%>"
+name = "authenticity_token">
+
+<input
+type = "submit"
+value = "comform">
+
+</form>

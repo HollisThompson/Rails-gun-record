@@ -1,0 +1,29 @@
+<h1>Create your Gun here</h1>
+<form method = "post" action = <%=gun_index_url%>>
+
+    <label for = "gun_model">Gun model</label>
+    <input 
+    type = "text"
+    name = "gun[model]"
+    id = "gun_model">
+
+    <label for = "gun_condtion">Condtion</label>
+    <input
+    type = "text"
+    name = "gun[condition]"
+    id = "gun_condtion">
+
+    <label for = year>Year manerfacterd</label>
+    <input
+    type = "number"
+    value = "2000"
+    name = "gun[year]"
+    id = "gun_year">
+
+    <input
+    type = "hidden"
+    value = "<%=form_authenticity_token%>"
+    name = "authenticity_token">
+
+    <input type="submit" value="sumbit">
+</form>
