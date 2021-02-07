@@ -3,8 +3,6 @@
     <%@guns.each do |gun|%>
         <tr>
             <td>the gun type is <%=gun.model%></td>
-            <td><%=destroy_gun_button(gun)%></td>
-            <td><%=edit_gun_button(gun)%></td>
             <td><%=show_gun_button(gun)%>
         </tr>
     <%end%>

@@ -1,6 +1,6 @@
 class GunController < ApplicationController
 
-    before_action :authenticate_user!, only: [:new]
+    before_action :authenticate_user!, only: [:new,:create,:destroy]
 
     def index
         @guns = Gun.all
@@ -46,6 +46,11 @@ class GunController < ApplicationController
         @gun = Gun.find(params[:id])
         @gun.destroy
         redirect_to gun_index_url
+    end
+
+    def owned
+        @guns = Gun.all
+        render :owned
     end
 
     private
