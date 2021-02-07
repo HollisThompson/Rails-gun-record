@@ -1,5 +1,7 @@
 class GunController < ApplicationController
 
+    before_action :authenticate_user!, only: [:new]
+
     def index
         @guns = Gun.all
         render :index
@@ -17,10 +19,11 @@ class GunController < ApplicationController
 
     def create
         @gun = Gun.new(gun_params)
-        if @gun.save
+        if @gun.save!
             redirect_to gun_url(@gun)
         else
             redirect_to new_gun_url
+            raise ArgumentError.new
         end
     end
 
@@ -31,11 +34,11 @@ class GunController < ApplicationController
     
     def update 
         @gun = Gun.find(params[:id])
-        if @gun.update(gun_params)
+        if @gun.update!(gun_params)
             redirect_to gun_url(@gun)
         else
-            flash.now[:errors] = @gun.errors.full_messages
             render :edit
+            #raise ArgumentError.new
         end
     end
 
@@ -48,7 +51,7 @@ class GunController < ApplicationController
     private
 
     def gun_params
-        params.require(:gun).permit(:condition ,:year ,:model)
+        params.require(:gun).permit(:condition ,:year ,:model, :user_id)
     end
 
 end

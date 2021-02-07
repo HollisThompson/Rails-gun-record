@@ -22,6 +22,12 @@
 
     <input
     type = "hidden"
+    value = "<%=current_user.id%>"
+    name = "gun[user_id]"
+    id = "user_id">
+
+    <input
+    type = "hidden"
     value = "<%=form_authenticity_token%>"
     name = "authenticity_token">
 
