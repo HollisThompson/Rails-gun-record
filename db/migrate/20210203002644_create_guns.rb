@@ -5,7 +5,6 @@ class CreateGuns < ActiveRecord::Migration[6.1]
       t.string :model
       t.string :condition
       t.belongs_to :user
-      t
 
       t.timestamps
     end
