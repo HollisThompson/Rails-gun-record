@@ -10,15 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_06_222048) do
+ActiveRecord::Schema.define(version: 2021_02_06_124558) do
 
   create_table "guns", force: :cascade do |t|
     t.integer "year"
     t.string "model"
     t.string "condition"
+    t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "user_id"
+    t.index ["user_id"], name: "index_guns_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
