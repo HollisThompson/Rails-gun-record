@@ -22,8 +22,7 @@ class GunController < ApplicationController
         if @gun.save!
             redirect_to gun_url(@gun)
         else
-            redirect_to new_gun_url
-            raise ArgumentError.new
+            redirect_to new_gun_url, notice: "Gun couldn't save"
         end
     end
 
@@ -37,8 +36,7 @@ class GunController < ApplicationController
         if @gun.update!(gun_params)
             redirect_to gun_url(@gun)
         else
-            render :edit
-            #raise ArgumentError.new
+            redirect_to :edit, notice: "Gun couldn't update"
         end
     end
 
